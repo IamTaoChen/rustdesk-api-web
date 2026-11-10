@@ -12,6 +12,14 @@ export function setToken (token) {
 }
 
 export function removeToken () {
+  for (const key of [
+    'wc-option:local:access_token',
+    'wc-key',
+    'wc-custom-rendezvous-server',
+    'wc-api-server',
+  ]) {
+    localStorage.removeItem(key)
+  }
   return localStorage.removeItem(TokenKey)
 }
 
